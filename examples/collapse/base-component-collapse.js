@@ -110,8 +110,6 @@ class Collapse extends Component {
 
         // ------------------------- Put custom show() codes below -------------------------
         this.element.classList.add('active')
-        // setTimeout(() => this.element.classList.add('active'), 50)
-        
     }
 
     /**
@@ -124,7 +122,6 @@ class Collapse extends Component {
 
         // ------------------------- Put custom hide() codes below -------------------------
         this.element.classList.remove('active')
-        
     }
     
     /**

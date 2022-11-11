@@ -21,6 +21,6 @@ p, button {
     opacity: 100;
 }
 
-.collapse-content {
+.collapse-wrapper .collapse-content {
     margin: 1rem;
 }
