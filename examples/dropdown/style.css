@@ -1,0 +1,32 @@
+body {
+    padding: 1rem;
+}
+
+p, a, button {
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+}
+
+.dropdown-wrapper {
+    max-width: 12rem;
+    border: 1px solid black;
+    overflow-y: hidden;
+    transition: 150ms ease-in-out;
+    transform-origin: top left;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.dropdown-wrapper.active {
+    transform: scale(1);
+    opacity: 100;
+}
+
+.dropdown-wrapper .dropdown-content {
+    padding: 1rem;
+}
+
+.dropdown-wrapper .dropdown-content a {
+    display: block;
+    line-height: 2;
+}
