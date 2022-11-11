@@ -109,7 +109,7 @@ class Collapse extends Component {
         this.toggle()
 
         // ------------------------- Put custom show() codes below -------------------------
-        this.element.classList.add('active')
+        this.element.classList.add('active');
     }
 
     /**
@@ -121,7 +121,7 @@ class Collapse extends Component {
         this.toggle()
 
         // ------------------------- Put custom hide() codes below -------------------------
-        this.element.classList.remove('active')
+        this.element.classList.remove('active');
     }
     
     /**
