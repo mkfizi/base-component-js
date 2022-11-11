@@ -90,7 +90,6 @@ class Alert extends Component {
 
         // ------------------------- Put custom hide() codes below -------------------------
         document.getElementById("textContent").innerHTML = 'Alert container has been closed.';
-
     }
 }
 
