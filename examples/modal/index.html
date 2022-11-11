@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Component JS | Modal</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./base-component-modal.js"></script>
+</head>
+<body>
+    <!-- Regular modal -->
+    <p><strong>Regular Modal</strong></p>
+    <p>Click on 'Toggle' button to toggle modal content.</p>
+    <button type="button" aria-controls="modalExample" data-toggle="show">Toggle</button>
+    <div id="modalExample" data-component="modal" aria-hidden="true" tabindex="-1" class="modal-wrapper">
+        <div aria-controls="modalExample" data-toggle="hide" class="backdrop"></div>
+        <div class="modal-content">
+            <p><strong>Modal Title</strong></p>
+            <p>This is an modal content text example.</p>
+            <button type="button" aria-controls="modalExample" data-toggle="hide">Close</button>
+        </div>
+    </div>
+    <div style="height: 4rem;"></div>
+
+    <!-- Static modal -->
+    <p><strong>Static Modal</strong></p>
+    <p>Click on 'Toggle' button to toggle static modal.</p>
+    <button type="button" aria-controls="staticModalExample" data-toggle="show">Toggle</button>
+    <div id="staticModalExample" data-component="modal" data-scrollable="false" aria-hidden="true" tabindex="-1" class="modal-wrapper">
+        <div aria-controls="staticModalExample" data-toggle="hide" class="backdrop"></div>
+        <div class="modal-content">
+            <p><strong>Modal Title</strong></p>
+            <p>This is an modal content text example.</p>
+            <button type="button" aria-controls="staticModalExample" data-toggle="hide">Close</button>
+        </div>
+    </div>
+</body>
+</html>
