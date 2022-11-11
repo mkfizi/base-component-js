@@ -1,4 +1,5 @@
 body {
+    margin: auto;
     padding: 1rem;
 }
 
@@ -18,7 +19,7 @@ p, button {
 
 .collapse-wrapper.active {
     height: 3.5rem;
-    opacity: 100;
+    opacity: 100%;
 }
 
 .collapse-wrapper .collapse-content {
