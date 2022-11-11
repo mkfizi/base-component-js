@@ -10,11 +10,36 @@
     <script src="./base-component-collapse.js"></script>
 </head>
 <body>
-    <p>Click on 'Toggle' button to toggle collapse content.</p>
+    <!-- Regular collapse -->
+    <p><strong>Regular</strong></p>
+    <p>Click on 'Toggle' button to toggle collapse.</p>
     <button type="button" aria-controls="collapseExample" aria-expanded="false">Toggle</button>
     <div id="collapseExample" data-component="collapse" aria-hidden="true" tabindex="-1" class="collapse-wrapper">
         <div class="collapse-content">
             <p>This is an collapse content text example.</p>
+        </div>
+    </div>
+    <div style="height: 4rem;"></div>
+
+    <!-- Collapse with accordion -->
+    <p><strong>Accordion</strong></p>
+    <p>Click on 'Toggle' button to toggle collapse accordion.</p>
+    <button type="button" aria-controls="collapseExample1" aria-expanded="true">Toggle 1</button>
+    <div id="collapseExample1" data-component="collapse" aria-hidden="false" tabindex="-1" data-accordion="accordionId" class="collapse-wrapper active">
+        <div class="collapse-content">
+            <p>This is an collapse content text example 1.</p>
+        </div>
+    </div>
+    <button type="button" aria-controls="collapseExample2" aria-expanded="false">Toggle 2</button>
+    <div id="collapseExample2" data-component="collapse" aria-hidden="true" tabindex="-1" data-accordion="accordionId" class="collapse-wrapper">
+        <div class="collapse-content">
+            <p>This is an collapse content text example 2.</p>
+        </div>
+    </div>
+    <button type="button" aria-controls="collapseExample3" aria-expanded="false">Toggle 3</button>
+    <div id="collapseExample3" data-component="collapse" aria-hidden="true" tabindex="-1" data-accordion="accordionId" class="collapse-wrapper">
+        <div class="collapse-content">
+            <p>This is an collapse content text example 3.</p>
         </div>
     </div>
 </body>
