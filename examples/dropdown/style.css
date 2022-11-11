@@ -1,4 +1,5 @@
 body {
+    margin: auto;
     padding: 1rem;
 }
 
@@ -11,7 +12,7 @@ p, a, button {
     max-width: 12rem;
     border: 1px solid black;
     overflow-y: hidden;
-    transition: 150ms ease-in-out;
+    transition: transform 150ms ease-in-out;
     transform-origin: top left;
     transform: scale(0);
     opacity: 0;
@@ -19,7 +20,7 @@ p, a, button {
 
 .dropdown-wrapper.active {
     transform: scale(1);
-    opacity: 100;
+    opacity: 100%;
 }
 
 .dropdown-wrapper .dropdown-content {
