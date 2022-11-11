@@ -114,6 +114,9 @@ class Modal extends Component {
 
         // ------------------------- Put custom show() codes below -------------------------
         this.element.classList.add('active');
+
+        let content = this.element.querySelector(".modal-content");
+        if (content != null) setTimeout(() => content.classList.add('active'), 10);
     }
 
     /**
@@ -125,7 +128,10 @@ class Modal extends Component {
         this.toggle();
 
         // ------------------------- Put custom hide() codes below -------------------------
-        this.element.classList.remove('active');
+        let content = this.element.querySelector(".modal-content");
+        if (content != null) content.classList.remove('active');
+        
+        setTimeout(() => this.element.classList.remove('active'), 150);
     }
 
     /**
