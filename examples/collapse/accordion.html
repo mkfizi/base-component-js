@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Component JS | Accordion</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./base-component-collapse.js"></script>
+</head>
+<body>
+    <p id="textContent">Click on 'Toggle' button to toggle collapse accordion.</p>
+    <button type="button" aria-controls="collapseExample1" aria-expanded="true">Toggle 1</button>
+    <div id="collapseExample1" data-component="collapse" aria-hidden="false" tabindex="-1" data-accordion="accordionId" class="collapse-wrapper active">
+        <div class="collapse-content">
+            <p>This is an collapse content text example 1.</p>
+        </div>
+    </div>
+    <button type="button" aria-controls="collapseExample2" aria-expanded="false">Toggle 2</button>
+    <div id="collapseExample2" data-component="collapse" aria-hidden="true" tabindex="-1" data-accordion="accordionId" class="collapse-wrapper">
+        <div class="collapse-content">
+            <p>This is an collapse content text example 2.</p>
+        </div>
+    </div>
+    <button type="button" aria-controls="collapseExample3" aria-expanded="false">Toggle 3</button>
+    <div id="collapseExample3" data-component="collapse" aria-hidden="true" tabindex="-1" data-accordion="accordionId" class="collapse-wrapper">
+        <div class="collapse-content">
+            <p>This is an collapse content text example 3.</p>
+        </div>
+    </div>
+
+</body>
+</html>

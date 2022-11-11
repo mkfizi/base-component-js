@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Component JS | Collapse</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./base-component-collapse.js"></script>
+</head>
+<body>
+    <p id="textContent">Click on 'Toggle' button to toggle collapse content.</p>
+    <button type="button" aria-controls="collapseExample" aria-expanded="false">Toggle</button>
+    <div id="collapseExample" data-component="collapse" aria-hidden="true" tabindex="-1" class="collapse-wrapper">
+        <div class="collapse-content">
+            <p>This is an collapse content text example.</p>
+        </div>
+    </div>
+</body>
+</html>
