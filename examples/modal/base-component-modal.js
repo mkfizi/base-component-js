@@ -72,8 +72,8 @@ class Modal extends Component {
     constructor(element) {
         super(element);
 
-        // If modal mode is non scrollable.
-        if (this.element.dataset.scrollable === "false") this.scrollable = false;
+        // If modal mode is scrollable.
+         if (this.element.hasAttribute("data-scrollable")) this.scrollable = this.element.dataset.scrollable;
 
         // Set default state.
         this.element.getAttribute("aria-hidden") === "false"

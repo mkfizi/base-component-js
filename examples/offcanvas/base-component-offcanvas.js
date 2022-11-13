@@ -72,8 +72,8 @@ class Offcanvas extends Component {
     constructor(element) {
         super(element);
 
-        // If modal offcanvas is non scrollable
-        if (this.element.dataset.scrollable === "false") this.scrollable = false;
+        // If offcanvas mode is scrollable
+         if (this.element.hasAttribute("data-scrollable")) this.scrollable = this.element.dataset.scrollable;
 
         // Set default component attributes.
         this.element.getAttribute("aria-hidden") === "false"
