@@ -46,6 +46,10 @@ class Component {
         // Add "click" event on component [aria-controls].
         this.controls = document.querySelectorAll(`[aria-controls="${this.id}"]`);
         for (let control of this.controls) control.addEventListener("click", this);
+
+        // ------------------------- Put custom constructor() codes below -------------------------
+
+
     }
 
     /**
@@ -59,6 +63,10 @@ class Component {
                 ? this.show()
                 : this.hide();
         }
+
+        // ------------------------- Put custom handleEvent() codes below -------------------------
+
+
     }
 }  
 
@@ -72,6 +80,10 @@ class Alert extends Component {
      */
     constructor(element) {
         super(element);
+
+        // ------------------------- Put custom constructor() codes below -------------------------
+
+
     }
     
     /**
@@ -85,7 +97,6 @@ class Alert extends Component {
         if (!event.target.hasAttribute("data-toggle")) this.hide();
 
         // ------------------------- Put custom handleEvent() codes below -------------------------
-
 
         
     }
@@ -118,12 +129,16 @@ class Collapse extends Component {
         super(element);
 
         // If collapse mode is accordion.
-        if (this.element.hasAttribute("data-accordion")) this.accordion = this.element.dataset.accordion;
+        if (this.element.hasAttribute("data-accordion")) this.accordion = this.element.dataset.accordion; 
 
         // Set default state.
         this.element.getAttribute("aria-hidden") === "false"
             ? this.show()
             : this.hide();
+
+        // ------------------------- Put custom constructor() codes below -------------------------
+
+
     }
     
     /**
@@ -142,6 +157,10 @@ class Collapse extends Component {
 
         // If collapse mode is accordion
         if (this.accordion != null && this.isActive) this.toggleAccordion();
+
+        // ------------------------- Put custom handleEvent() codes below -------------------------
+
+
     }
 
     /**
@@ -150,7 +169,7 @@ class Collapse extends Component {
     show() {
         this.isActive = true;
 
-        this.toggle()
+        this.toggle();
 
         // ------------------------- Put custom show() codes below -------------------------
         
@@ -163,7 +182,7 @@ class Collapse extends Component {
     hide() {
         this.isActive = false;
 
-        this.toggle()
+        this.toggle();
 
         // ------------------------- Put custom hide() codes below -------------------------
         
@@ -220,12 +239,14 @@ class Dropdown extends Component {
         this.hide();
         
         // Handle click outside.
-        window.addEventListener("click", event => {
-            let targetComponent = event.target.closest(`#${this.id}`);
-            let targetAriaControls = event.target.closest(`[aria-controls="${this.id}"]`);
+        window.addEventListener("click", this.toggleClickOutside(this));
 
-            if (targetComponent == null && targetAriaControls == null ) this.hide();
-        });
+        // Handle click outside for touch based screen.
+        window.addEventListener("touchstart", this.toggleClickOutside(this));
+
+        // ------------------------- Put custom constructor() codes below -------------------------
+
+
     }
     
     /**
@@ -289,6 +310,20 @@ class Dropdown extends Component {
 
 
     }
+
+    /**
+     * Toggle click outside.
+     * @param {object} object 
+     * @returns 
+     */
+     toggleClickOutside(object) {
+        return event => {
+            let targetComponent = event.target.closest(`#${object.id}`);
+            let targetAriaControls = event.target.closest(`[aria-controls="${object.id}"]`);
+    
+            if (targetComponent == null && targetAriaControls == null ) object.hide();
+        }
+    }
 }
 
 /**************************************************
@@ -307,12 +342,15 @@ class Modal extends Component {
 
         // If modal mode is scrollable.
         if (this.element.hasAttribute("data-scrollable")) this.scrollable = this.element.dataset.scrollable;
-
+        
         // Set default state.
         this.element.getAttribute("aria-hidden") === "false"
             ? this.show()
             : this.hide();
+
+        // ------------------------- Put custom constructor() codes below -------------------------
         
+
     }
 
     /**
@@ -328,6 +366,10 @@ class Modal extends Component {
                 ? this.hide()
                 : this.show();
         }
+
+        // ------------------------- Put custom handleEvent() codes below -------------------------
+
+
     }
 
     /**
@@ -405,13 +447,16 @@ class Offcanvas extends Component {
     constructor(element) {
         super(element);
 
-        // If offcanvas mode is scrollable
-         if (this.element.hasAttribute("data-scrollable")) this.scrollable = this.element.dataset.scrollable;
+        // If offcanvas mode is scrollable.
+        if (this.element.hasAttribute("data-scrollable")) this.scrollable = this.element.dataset.scrollable;
 
         // Set default component attributes.
         this.element.getAttribute("aria-hidden") === "false"
             ? this.show()
             : this.hide();
+        
+        // ------------------------- Put custom constructor() codes below -------------------------
+
 
     }
 
@@ -428,6 +473,10 @@ class Offcanvas extends Component {
                 ? this.hide()
                 : this.show();
         }
+
+        // ------------------------- Put custom handleEvent() codes below -------------------------
+
+
     }
 
     /**
@@ -451,7 +500,7 @@ class Offcanvas extends Component {
     }
 
     /**
-     * Hide modal component.
+     * Hide offcanvas component.
      */
     hide() {
         this.isActive = false;
@@ -473,7 +522,7 @@ class Offcanvas extends Component {
             enableTab(this.element);
             enableFocusTrap(this.element);
 
-            // If offcanvas mode is non scrollable
+            // If offcanvas mode is non scrollable.
             if (!this.scrollable) disableBodyScroll();
         } else {
             disableTab(this.element);
@@ -506,6 +555,10 @@ const enableTab = element => {
     for (let focusableChildElement of focusableChildElements) {
         focusableChildElement.removeAttribute("tabindex");
     }
+
+    // ------------------------- Put custom enableTab() codes below -------------------------
+
+
 }
 
 /**
@@ -519,6 +572,10 @@ const disableTab = element => {
     for (let focusableChildElement of focusableChildElements) {
         focusableChildElement.setAttribute("tabindex", -1);
     }
+
+    // ------------------------- Put custom disableTab() codes below -------------------------
+
+
 }
 
 /**
@@ -526,6 +583,10 @@ const disableTab = element => {
  */
 const enableBodyScroll = () => {
     document.body.style.overflow = 'auto';
+
+    // ------------------------- Put custom enablebodyScroll() codes below -------------------------
+
+
 }
 
 /**
@@ -533,6 +594,8 @@ const enableBodyScroll = () => {
  */
 const disableBodyScroll = () => {
     document.body.style.overflow = 'hidden';
+
+    // ------------------------- Put custom disableBodyScroll() codes below -------------------------
 }
 
 
@@ -542,6 +605,10 @@ const disableBodyScroll = () => {
  */
 const enableFocusTrap = element => {
     window.addEventListener("keydown", handleFocusTrap(element));
+
+    // ------------------------- Put custom enableFocusTrap() codes below -------------------------
+
+
 }
 
 /**
@@ -550,6 +617,10 @@ const enableFocusTrap = element => {
  */
 const disableFocusTrap = element => {
     window.removeEventListener("keydown", handleFocusTrap(element));
+
+    // ------------------------- Put custom disableFocusTrap() codes below -------------------------
+
+
 }
 
 /**
@@ -573,6 +644,10 @@ const handleFocusTrap = (element) => {
                 firstElement.focus();
             }
         }
+
+        // ------------------------- Put custom handleFocusTrap() codes below -------------------------
+
+
     }
 }
 
@@ -645,6 +720,9 @@ const initializeComponents = () => {
                     component = new Offcanvas(components[i]);
                     offcanvasInstances.push(component);
                     break;
+
+                // ------------------------- Put custom component codes below -------------------------
+
 
                 default:
                     break;
