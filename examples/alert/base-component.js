@@ -1,9 +1,10 @@
 /**
  * --------------------------------------------------------------------------
- * Base Component JS (v0.0.1) by @mkfizi (https://mkfizi.github.io/)
+ * Base Component JS (v0.1.1) by @mkfizi (https://mkfizi.github.io/)
  * Licensed under MIT (https://github.com/mkfizi/base-component-js/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
+
 "use strict";
 
 // ====================================================================================================
@@ -23,9 +24,9 @@ let alertInstances = [];        // All instances of alert component.
  * Base class.
  */ 
 class Component {
-    id = null;          // Component id.
-    element = null;     // Component's main element.
-    controls = null;    // Element with [aria-controls] value referencing to component's id.
+    id = null;              // Component id.
+    element = null;         // Component's main element.
+    controls = null;        // Element with [aria-controls] value referencing to component's id.
 
     /**
      * Initialize component.
@@ -75,11 +76,6 @@ class Alert extends Component {
 
         // If [data-toggle] attribute is not defined on element with [aria-controls] attribute.
         if (!event.target.hasAttribute("data-toggle")) this.hide();
-
-        // ------------------------- Put custom handleEvent() codes below -------------------------
-
-
-        
     }
 
     /**
@@ -105,7 +101,7 @@ class Alert extends Component {
  * @param {string} type 
  * @returns {boolean} isValid
  */ 
- const validateComponents = (id, type) => {
+const validateComponents = (id, type) => {
     let isValid = true;
 
     // "id" and "type" validation.
@@ -148,7 +144,7 @@ const initializeComponents = () => {
                     component = new Alert(components[i]);
                     alertInstances.push(component);
                     break;
-
+                    
                 default:
                     break;
             }
