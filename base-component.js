@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Base Component JS (v0.0.1) by @mkfizi (https://mkfizi.github.io/)
+ * Base Component JS (v0.1.1) by @mkfizi (https://mkfizi.github.io/)
  * Licensed under MIT (https://github.com/mkfizi/base-component-js/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
