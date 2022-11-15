@@ -5,8 +5,6 @@
  * --------------------------------------------------------------------------
  */
 
-"use strict";
-
 // ====================================================================================================
 // Global variables.
 // ====================================================================================================
@@ -18,8 +16,13 @@ let dropdownInstances = [];     // All instances of dropdown component.
 let modalInstances = [];        // All instances of modal component.
 let offcanvasInstances = [];    // All instances of offcanvas component.
 
-// Focusable tags for querySelector().
-let focusable = `a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex="0"], [contenteditable]`;
+let currentFocusTrapElement = null; // Current active element for focus trap
+
+// Tabbable selectors.
+let tabbable = `a, button, input, textarea, select, details, [tabindex], [contenteditable="true"]`;
+
+// Focusable selectors.
+let focusable = 'a:not([tabindex="-1"]), button:not([tabindex="-1"]), input:not([tabindex="-1"]), textarea:not([tabindex="-1"]), select:not([tabindex="-1"]), details:not([tabindex="-1"]), [tabindex]:not([tabindex="-1"]), [contenteditable="true"]:not([tabindex="-1"])';
 
 
 
@@ -98,6 +101,7 @@ class Alert extends Component {
 
         // ------------------------- Put custom handleEvent() codes below -------------------------
 
+
         
     }
 
@@ -137,8 +141,8 @@ class Collapse extends Component {
             : this.hide();
 
         // ------------------------- Put custom constructor() codes below -------------------------
-
-
+    
+    
     }
     
     /**
@@ -173,7 +177,7 @@ class Collapse extends Component {
 
         // ------------------------- Put custom show() codes below -------------------------
         
-        
+
     }
 
     /**
@@ -182,11 +186,10 @@ class Collapse extends Component {
     hide() {
         this.isActive = false;
 
-        this.toggle();
+        this.toggle()
 
         // ------------------------- Put custom hide() codes below -------------------------
-        
-        
+    
     }
     
     /**
@@ -204,7 +207,7 @@ class Collapse extends Component {
         
         // ------------------------- Put custom toogle() codes below -------------------------
         
-        
+
     }
 
     /**
@@ -226,7 +229,8 @@ class Collapse extends Component {
  * Dropdown class.
  */
 class Dropdown extends Component {
-    isActive = false;   // State of dropdown.
+    isActive = false;       // State of dropdown.
+    position = "right";     // Position of dropdown.
 
     /**
      * Initialize dropdown component.
@@ -245,7 +249,7 @@ class Dropdown extends Component {
         window.addEventListener("touchstart", this.toggleClickOutside(this));
 
         // ------------------------- Put custom constructor() codes below -------------------------
-
+        
 
     }
     
@@ -316,7 +320,7 @@ class Dropdown extends Component {
      * @param {object} object 
      * @returns 
      */
-     toggleClickOutside(object) {
+    toggleClickOutside(object) {
         return event => {
             let targetComponent = event.target.closest(`#${object.id}`);
             let targetAriaControls = event.target.closest(`[aria-controls="${object.id}"]`);
@@ -342,12 +346,12 @@ class Modal extends Component {
 
         // If modal mode is scrollable.
         if (this.element.hasAttribute("data-scrollable")) this.scrollable = this.element.dataset.scrollable;
-        
+
         // Set default state.
         this.element.getAttribute("aria-hidden") === "false"
             ? this.show()
             : this.hide();
-
+        
         // ------------------------- Put custom constructor() codes below -------------------------
         
 
@@ -357,7 +361,7 @@ class Modal extends Component {
      * Handle modal component click event.
      * @param {event} event 
      */
-     handleEvent(event) {
+    handleEvent(event) {
         super.handleEvent(event);
 
         // If [data-toggle] attribute is not defined on element with [aria-controls] attribute.
@@ -389,7 +393,7 @@ class Modal extends Component {
 
         // ------------------------- Put custom show() codes below -------------------------
         
-        
+
     }
 
     /**
@@ -402,7 +406,6 @@ class Modal extends Component {
 
         // ------------------------- Put custom hide() codes below -------------------------
         
-         
     }
 
     /**
@@ -433,12 +436,16 @@ class Modal extends Component {
     }
 }
 
+
+
 /**************************************************
  * Offcanvas class.
  */
 class Offcanvas extends Component {
     isActive = false;   // State of offcanvas.
     scrollable = true;  // Offcanvas scrollable mode.
+    position = "left";  // Position of offcanvas
+    content = null;     // Offcanvas content.
 
     /**
      * Initialize offcanvas component.
@@ -454,17 +461,17 @@ class Offcanvas extends Component {
         this.element.getAttribute("aria-hidden") === "false"
             ? this.show()
             : this.hide();
-        
+
         // ------------------------- Put custom constructor() codes below -------------------------
-
-
+        
+        
     }
 
     /**
      * Handle offcanvas component click event.
      * @param {event} event 
      */
-     handleEvent(event) {
+    handleEvent(event) {
         super.handleEvent(event);
 
         // If [data-toggle] attribute is not defined on element with [aria-controls] attribute.
@@ -475,7 +482,7 @@ class Offcanvas extends Component {
         }
 
         // ------------------------- Put custom handleEvent() codes below -------------------------
-
+        
 
     }
 
@@ -496,7 +503,7 @@ class Offcanvas extends Component {
 
         // ------------------------- Put custom show() codes below -------------------------
         
-
+        
     }
 
     /**
@@ -520,13 +527,15 @@ class Offcanvas extends Component {
 
         if (this.isActive) {
             enableTab(this.element);
-            enableFocusTrap(this.element);
+
+            currentFocusTrapElement = this.element;
+            enableFocusTrap();
 
             // If offcanvas mode is non scrollable.
             if (!this.scrollable) disableBodyScroll();
         } else {
             disableTab(this.element);
-            disableFocusTrap(this.element);
+            disableFocusTrap();
 
             // If offcanvas mode is non scrollable
             if (!this.scrollable) enableBodyScroll();
@@ -537,8 +546,6 @@ class Offcanvas extends Component {
 
     }
 }
-
-
 
 // ====================================================================================================
 // Helper functions.
@@ -551,9 +558,12 @@ class Offcanvas extends Component {
 const enableTab = element => {
     element.removeAttribute("tabindex");
 
-    let focusableChildElements = element.querySelectorAll(focusable);
-    for (let focusableChildElement of focusableChildElements) {
-        focusableChildElement.removeAttribute("tabindex");
+    // Remove [tabindex] attribute from tabbable child elements.
+    let tabbableChildElements = element.querySelectorAll(tabbable);
+    for (let tabbableChildElement of tabbableChildElements) {
+
+        // Remove only on child element with parent attribute of [aria-hidden="true"].
+        if (tabbableChildElement.closest(`[aria-hidden="true"]`) == null) tabbableChildElement.removeAttribute("tabindex");
     }
 
     // ------------------------- Put custom enableTab() codes below -------------------------
@@ -568,9 +578,10 @@ const enableTab = element => {
 const disableTab = element => {
     element.setAttribute("tabindex", -1);
 
-    let focusableChildElements = element.querySelectorAll(focusable);
-    for (let focusableChildElement of focusableChildElements) {
-        focusableChildElement.setAttribute("tabindex", -1);
+    // Add [tabindex="-1"] on tabbable child elemenets.
+    let tabbableChildElements = element.querySelectorAll(tabbable);
+    for (let tabbableChildElement of tabbableChildElements) {
+        tabbableChildElement.setAttribute("tabindex", -1);
     }
 
     // ------------------------- Put custom disableTab() codes below -------------------------
@@ -585,7 +596,7 @@ const enableBodyScroll = () => {
     document.body.style.overflow = 'auto';
 
     // ------------------------- Put custom enablebodyScroll() codes below -------------------------
-
+    
 
 }
 
@@ -594,17 +605,27 @@ const enableBodyScroll = () => {
  */
 const disableBodyScroll = () => {
     document.body.style.overflow = 'hidden';
-
     // ------------------------- Put custom disableBodyScroll() codes below -------------------------
 }
 
 
 /**
  * Enable focus trap.
- * @param {object} element 
  */
-const enableFocusTrap = element => {
-    window.addEventListener("keydown", handleFocusTrap(element));
+const enableFocusTrap = () => {
+    window.addEventListener("keydown", handleFocusTrap);
+
+    let focusElement = currentFocusTrapElement;
+
+    setTimeout(() => { 
+        focusElement.setAttribute("tabindex", 0);
+        focusElement.focus();
+    }, 50);
+
+    setTimeout(() => { 
+        focusElement.removeAttribute("tabindex"); 
+        focusElement.blur();
+    }, 150);
 
     // ------------------------- Put custom enableFocusTrap() codes below -------------------------
 
@@ -613,11 +634,10 @@ const enableFocusTrap = element => {
 
 /**
  * Disable focus trap.
- * @param {object} element 
  */
-const disableFocusTrap = element => {
-    window.removeEventListener("keydown", handleFocusTrap(element));
-
+const disableFocusTrap = () => {
+    window.removeEventListener("keydown", handleFocusTrap);
+    currentFocusTrapElement = null;
     // ------------------------- Put custom disableFocusTrap() codes below -------------------------
 
 
@@ -625,30 +645,26 @@ const disableFocusTrap = element => {
 
 /**
  * Handle focus trap.
- * @param {object} element 
  * @returns {function}
  */
-const handleFocusTrap = (element) => {
-    return event => {
-        let focusableElements = element.querySelectorAll(focusable); 
+const handleFocusTrap = event => {
+    let focusableElements = currentFocusTrapElement.querySelectorAll(focusable);
     
-        let firstElement = focusableElements[0];
-        let lastElement = focusableElements[focusableElements.length - 1];
+    let firstElement = focusableElements[0];
+    let lastElement = focusableElements[focusableElements.length - 1];
 
-        if (event.type === "keydown" && event.keyCode === 9) {
-            if (event.shiftKey && document.activeElement === firstElement) {
-                event.preventDefault();
-                lastElement.focus();
-            } else if (!event.shiftKey && document.activeElement === lastElement) {
-                event.preventDefault();
-                firstElement.focus();
-            }
+    if (event.type === "keydown" && event.keyCode === 9) {
+        if (event.shiftKey && (document.activeElement === firstElement || document.activeElement === document.body)) {
+            event.preventDefault();
+            lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
         }
-
-        // ------------------------- Put custom handleFocusTrap() codes below -------------------------
-
-
     }
+
+    // ------------------------- Put custom handleFocusTrap() codes below -------------------------
+
 }
 
 /**
@@ -657,7 +673,7 @@ const handleFocusTrap = (element) => {
  * @param {string} type 
  * @returns {boolean} isValid
  */ 
- const validateComponents = (id, type) => {
+const validateComponents = (id, type) => {
     let isValid = true;
 
     // "id" and "type" validation.
