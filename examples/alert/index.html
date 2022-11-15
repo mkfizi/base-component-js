@@ -7,23 +7,14 @@
     <title>Base Component JS | Alert</title>
 
     <link rel="stylesheet" href="./style.css">
-    <script src="./base-component.js"></script>
+    <script src="./base-component-alert.js"></script>
 </head>
 <body>
     <h1>Alert Component Example</h1>
-    <p>Triggering 'close' button below will trigger custom codes that are added into <code>hide()</code> method in <code>Alert</code> class.</p>
+    <p>Triggering 'close' button below will create a 'reset' button element and append it into <code>body</code> element. This custom codes that are added into <code>hide()</code> method in <code>Alert</code> class. Refer to <code>./base-component-alert.js</code> for more informations.</p>
     <div id="alertExample" data-component="alert" class="alert-wrapper">
         <p>Click on 'close' button to trigger hide alert.</p>
         <button type="button" aria-controls="alertExample" data-toggle="hide">Close</button>
     </div>
-    <button id="resetButton" type="button">Reset</button>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("resetButton").addEventListener("click", () => {
-                location.reload();
-            })
-        });
-    </script>
 </body>
 </html>

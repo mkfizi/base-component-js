@@ -85,7 +85,13 @@ class Alert extends Component {
         this.element.remove();
 
         // ------------------------- Put custom hide() codes below -------------------------
-        document.getElementById("textContent").innerHTML = 'Alert container has been closed.';
+        let element = document.createElement("button");
+        element.setAttribute("type", "button");
+        element.innerHTML = "Reset";
+        element.addEventListener("click", () => {
+            location.reload();
+        })
+        document.body.appendChild(element);
     }
 }
 
