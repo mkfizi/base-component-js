@@ -39,6 +39,10 @@ class Component {
         // Add "click" event on component [aria-controls].
         this.controls = document.querySelectorAll(`[aria-controls="${this.id}"]`);
         for (let control of this.controls) control.addEventListener("click", this);
+
+        // ------------------------- Put custom constructor() codes below -------------------------
+
+
     }
 
     /**
@@ -52,6 +56,10 @@ class Component {
                 ? this.show()
                 : this.hide();
         }
+
+        // ------------------------- Put custom handleEvent() codes below -------------------------
+
+
     }
 }  
 
@@ -65,6 +73,10 @@ class Alert extends Component {
      */
     constructor(element) {
         super(element);
+
+        // ------------------------- Put custom constructor() codes below -------------------------
+
+        
     }
     
     /**
@@ -76,6 +88,10 @@ class Alert extends Component {
 
         // If [data-toggle] attribute is not defined on element with [aria-controls] attribute.
         if (!event.target.hasAttribute("data-toggle")) this.hide();
+
+        // ------------------------- Put custom handleEvent() codes below -------------------------
+
+
     }
 
     /**
