@@ -2,7 +2,7 @@
 
 This is a customizable component boilerplates made in vanilla Javascript.
 
-[View Demo](https://mkfizi.github.io/base-component)
+[View Demo](https://mkfizi.github.io/base-component-website)
 
 ## Installation
 
@@ -23,7 +23,7 @@ Simply put, this library only provides the groundwork on initializing and
 handling components activities. You will need to write your own codes for
 component's activities when the control event is triggered.
 
-[Read Documentation](https://mkfizi.github.io/base-component/docs)
+[Read Documentation](https://mkfizi.github.io/base-component-website/docs)
 
 ## Features
 
