@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Base Component JS (v0.0.1) by @mkfizi (https://mkfizi.github.io/)
+ * Base Component JS (v0.1.1) by @mkfizi (https://mkfizi.github.io/)
  * Licensed under MIT (https://github.com/mkfizi/base-component-js/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -14,8 +14,8 @@
 let componentInstances = [];    // All instances of component.
 let collapseInstances = [];     // All instances of collapse component.
 
-// Focusable tags for querySelector().
-let focusable = `a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, [tabindex="0"], [contenteditable]`;
+// Tabbable selectors.
+let tabbable = `a, button, input, textarea, select, details, [tabindex], [contenteditable="true"]`;
 
 
 
@@ -27,9 +27,9 @@ let focusable = `a[href], area[href], input:not([disabled]), select:not([disable
  * Base class.
  */ 
 class Component {
-    id = null;          // Component id.
-    element = null;     // Component's main element.
-    controls = null;    // Element with [aria-controls] value referencing to component's id.
+    id = null;              // Component id.
+    element = null;         // Component's main element.
+    controls = null;        // Element with [aria-controls] value referencing to component's id.
 
     /**
      * Initialize component.
@@ -42,6 +42,10 @@ class Component {
         // Add "click" event on component [aria-controls].
         this.controls = document.querySelectorAll(`[aria-controls="${this.id}"]`);
         for (let control of this.controls) control.addEventListener("click", this);
+
+        // ------------------------- Put custom constructor() codes below -------------------------
+
+
     }
 
     /**
@@ -55,6 +59,10 @@ class Component {
                 ? this.show()
                 : this.hide();
         }
+
+        // ------------------------- Put custom handleEvent() codes below -------------------------
+
+
     }
 }  
 
@@ -74,12 +82,16 @@ class Collapse extends Component {
         super(element);
 
         // If collapse mode is accordion.
-        if (this.element.hasAttribute("data-accordion")) this.accordion = this.element.dataset.accordion;
+        if (this.element.hasAttribute("data-accordion")) this.accordion = this.element.dataset.accordion; 
 
         // Set default state.
         this.element.getAttribute("aria-hidden") === "false"
             ? this.show()
             : this.hide();
+
+        // ------------------------- Put custom constructor() codes below -------------------------
+    
+    
     }
     
     /**
@@ -98,6 +110,10 @@ class Collapse extends Component {
 
         // If collapse mode is accordion
         if (this.accordion != null && this.isActive) this.toggleAccordion();
+
+        // ------------------------- Put custom handleEvent() codes below -------------------------
+
+
     }
 
     /**
@@ -106,7 +122,7 @@ class Collapse extends Component {
     show() {
         this.isActive = true;
 
-        this.toggle()
+        this.toggle();
 
         // ------------------------- Put custom show() codes below -------------------------
         this.element.classList.add('active');
@@ -139,7 +155,7 @@ class Collapse extends Component {
         
         // ------------------------- Put custom toogle() codes below -------------------------
         
-        
+
     }
 
     /**
@@ -170,10 +186,17 @@ class Collapse extends Component {
 const enableTab = element => {
     element.removeAttribute("tabindex");
 
-    let focusableChildElements = element.querySelectorAll(focusable);
-    for (let focusableChildElement of focusableChildElements) {
-        focusableChildElement.removeAttribute("tabindex");
+    // Remove [tabindex] attribute from tabbable child elements.
+    let tabbableChildElements = element.querySelectorAll(tabbable);
+    for (let tabbableChildElement of tabbableChildElements) {
+
+        // Remove only on child element with parent attribute of [aria-hidden="true"].
+        if (tabbableChildElement.closest(`[aria-hidden="true"]`) == null) tabbableChildElement.removeAttribute("tabindex");
     }
+
+    // ------------------------- Put custom enableTab() codes below -------------------------
+
+
 }
 
 /**
@@ -183,10 +206,15 @@ const enableTab = element => {
 const disableTab = element => {
     element.setAttribute("tabindex", -1);
 
-    let focusableChildElements = element.querySelectorAll(focusable);
-    for (let focusableChildElement of focusableChildElements) {
-        focusableChildElement.setAttribute("tabindex", -1);
+    // Add [tabindex="-1"] on tabbable child elemenets.
+    let tabbableChildElements = element.querySelectorAll(tabbable);
+    for (let tabbableChildElement of tabbableChildElements) {
+        tabbableChildElement.setAttribute("tabindex", -1);
     }
+
+    // ------------------------- Put custom disableTab() codes below -------------------------
+
+
 }
 
 /**
@@ -195,7 +223,7 @@ const disableTab = element => {
  * @param {string} type 
  * @returns {boolean} isValid
  */ 
- const validateComponents = (id, type) => {
+const validateComponents = (id, type) => {
     let isValid = true;
 
     // "id" and "type" validation.
@@ -234,10 +262,33 @@ const initializeComponents = () => {
 
             // Define type of components here.
             switch (type) {
+                case "alert":
+                    component = new Alert(components[i]);
+                    alertInstances.push(component);
+                    break;
+
                 case "collapse":
                     component = new Collapse(components[i]);
                     collapseInstances.push(component);
                     break;
+
+                case "dropdown":
+                    component = new Dropdown(components[i]);
+                    dropdownInstances.push(component);
+                    break;
+
+                case "modal":
+                    component = new Modal(components[i]);
+                    modalInstances.push(component);
+                    break;
+
+                case "offcanvas":
+                    component = new Offcanvas(components[i]);
+                    offcanvasInstances.push(component);
+                    break;
+
+                // ------------------------- Put custom component codes below -------------------------
+
 
                 default:
                     break;
