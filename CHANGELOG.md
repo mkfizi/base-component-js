@@ -25,6 +25,7 @@ Put unreleased changes here.
 * Collapse and accordion example.
 * Dropdown example.
 * Modal example.
+* Offcanvas example.
 
 ### Fixed
 * Focus trap behaviour.
