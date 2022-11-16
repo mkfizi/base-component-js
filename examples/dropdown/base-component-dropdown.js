@@ -266,6 +266,7 @@ const initializeComponents = () => {
                 case "dropdown":
                     component = new Dropdown(components[i]);
                     dropdownInstances.push(component);
+                    componentInstances.push(component);
                     break;
 
                 // ------------------------- Put custom component codes below -------------------------
@@ -274,8 +275,6 @@ const initializeComponents = () => {
                 default:
                     break;
             }
-
-            componentInstances.push(component);
         }
     }
 }

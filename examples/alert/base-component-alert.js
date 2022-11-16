@@ -170,13 +170,12 @@ const initializeComponents = () => {
                 case "alert":
                     component = new Alert(components[i]);
                     alertInstances.push(component);
+                    componentInstances.push(component);
                     break;
                     
                 default:
                     break;
             }
-
-            componentInstances.push(component);
         }
     }
 }

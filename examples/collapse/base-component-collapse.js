@@ -265,6 +265,7 @@ const initializeComponents = () => {
                 case "collapse":
                     component = new Collapse(components[i]);
                     collapseInstances.push(component);
+                    componentInstances.push(component);
                     break;
 
                 // ------------------------- Put custom component codes below -------------------------
@@ -273,8 +274,6 @@ const initializeComponents = () => {
                 default:
                     break;
             }
-
-            componentInstances.push(component);
         }
     }
 }

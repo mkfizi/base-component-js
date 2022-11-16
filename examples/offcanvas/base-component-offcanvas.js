@@ -382,6 +382,7 @@ const initializeComponents = () => {
                 case "offcanvas":
                     component = new Offcanvas(components[i]);
                     offcanvasInstances.push(component);
+                    componentInstances.push(component);
                     break;
 
                 // ------------------------- Put custom component codes below -------------------------
@@ -390,8 +391,6 @@ const initializeComponents = () => {
                 default:
                     break;
             }
-
-            componentInstances.push(component);
         }
     }
 }

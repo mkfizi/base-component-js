@@ -377,6 +377,7 @@ const initializeComponents = () => {
                 case "modal":
                     component = new Modal(components[i]);
                     modalInstances.push(component);
+                    componentInstances.push(component);
                     break;
 
                 // ------------------------- Put custom component codes below -------------------------
@@ -385,8 +386,6 @@ const initializeComponents = () => {
                 default:
                     break;
             }
-
-            componentInstances.push(component);
         }
     }
 }

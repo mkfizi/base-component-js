@@ -750,26 +750,31 @@ const initializeComponents = () => {
                 case "alert":
                     component = new Alert(components[i]);
                     alertInstances.push(component);
+                    componentInstances.push(component);
                     break;
 
                 case "collapse":
                     component = new Collapse(components[i]);
                     collapseInstances.push(component);
+                    componentInstances.push(component);
                     break;
 
                 case "dropdown":
                     component = new Dropdown(components[i]);
                     dropdownInstances.push(component);
+                    componentInstances.push(component);
                     break;
 
                 case "modal":
                     component = new Modal(components[i]);
                     modalInstances.push(component);
+                    componentInstances.push(component);
                     break;
 
                 case "offcanvas":
                     component = new Offcanvas(components[i]);
                     offcanvasInstances.push(component);
+                    componentInstances.push(component);
                     break;
 
                 // ------------------------- Put custom component codes below -------------------------
@@ -778,8 +783,6 @@ const initializeComponents = () => {
                 default:
                     break;
             }
-
-            componentInstances.push(component);
         }
     }
 }
