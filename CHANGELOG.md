@@ -20,8 +20,14 @@ Put unreleased changes here.
 ### Added
 * Tabbable selectors.
 
+### Changed
+* Alert example.
+* Collapse and accordion example.
+* Dropdown example.
+* Modal example.
+
 ### Fixed
-* Focus trap method.
+* Focus trap behaviour.
 
 ## [0.1.0] - 2022-11-11
 ### Added
