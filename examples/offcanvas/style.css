@@ -1,16 +1,31 @@
 body {
-    margin: auto;
+    color: #333;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 14px;
+    line-height: 1.25rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    max-width: 48rem;
+    margin: 4rem auto;
     padding: 1rem;
-    min-height: 125vh;
+    height: 105vh;
 }
 
-p, a, button {
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
+code {
+    background: #eee;
+    font-size: 90%;
+    padding: 0 2px;
+}
+
+h1 {
+    margin-bottom: 2rem;
 }
 
 .offcanvas-wrapper {
     position: fixed;
+    border: 1px solid #ccc;
     top: 0;
     bottom: 0;
     left: 0;
@@ -19,7 +34,11 @@ p, a, button {
     display: none;
 }
 
-.offcanvas-wrapper .backdrop {
+.offcanvas-wrapper.active {
+    display: block;
+}
+
+.backdrop {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -32,23 +51,14 @@ p, a, button {
 .offcanvas-wrapper .offcanvas-content {
     background-color: white;
     position: fixed;
+    z-index: 50;
     top: 0;
     left: 0;
-    z-index: 50;
-    width: 12rem;
-    padding: 1rem;
+    width: 12em;
     height: 100vh;
+    padding: 1rem;
     transition: transform 150ms ease-in-out;
     transform: translate(-100vh);
-}
-
-.offcanvas-wrapper .offcanvas-content a {
-    display: block;
-    line-height: 2;
-}
-
-.offcanvas-wrapper.active {
-    display: block;
 }
 
 .offcanvas-wrapper.active .offcanvas-content.active {

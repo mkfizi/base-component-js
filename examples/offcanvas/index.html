@@ -10,34 +10,36 @@
     <script src="./base-component-offcanvas.js"></script>
 </head>
 <body>
+    <h1>Offcanvas Example</h1>
+
     <!-- Regular offcanvas -->
-    <p><strong>Regular Offcanvas</strong></p>
-    <p>Click on 'Toggle' button to toggle offcanvas.</p>
-    <button type="button" aria-controls="offcanvasExample" data-toggle="show">Toggle</button>
+    <h2>Regular Offcanvas</h2>
+    <p>Click on 'Show' button to show offcanvas.</p>
+    <button type="button" aria-controls="offcanvasExample" data-toggle="show" aria-label="Open offcanvas.">Show</button>
     <div id="offcanvasExample" data-component="offcanvas" aria-hidden="true" tabindex="-1" class="offcanvas-wrapper">
-        <div aria-controls="offcanvasExample" data-toggle="hide" class="backdrop"></div>
+        <div aria-controls="offcanvasExample" data-toggle="hide" class="backdrop" aria-label="Close offcanvas."></div>
         <div class="offcanvas-content">
             <a href="#" tabindex="-1">Offcanvas Menu 1</a>
             <a href="#" tabindex="-1">Offcanvas Menu 2</a>
             <a href="#" tabindex="-1">Offcanvas Menu 3</a>
             <div style="height: 2rem;"></div>
-            <button type="button" aria-controls="offcanvasExample" data-toggle="hide">Close</button>
+            <button type="button" aria-controls="offcanvasExample" data-toggle="hide" aria-label="Close offcanvas.">Close</button>
         </div>
     </div>
     <div style="height: 4rem;"></div>
 
     <!-- Static offcanvas -->
-    <p><strong>Static Offcanvas</strong></p>
-    <p>Click on 'Toggle' button to toggle static offcanvas.</p>
-    <button type="button" aria-controls="staticOffcanvasExample" data-toggle="show">Toggle</button>
+    <h2>Static Offcanvas</h2>
+    <p>Click on 'Show' button to show static (unscrollable body) offcanvas.</p>
+    <button type="button" aria-controls="staticOffcanvasExample" data-toggle="show" aria-label="Open offcanvas.">Show</button>
     <div id="staticOffcanvasExample" data-component="offcanvas" data-scrollable="false" aria-hidden="true" tabindex="-1" class="offcanvas-wrapper">
-        <div aria-controls="staticOffcanvasExample" data-toggle="hide" class="backdrop"></div>
+        <div aria-controls="staticOffcanvasExample" data-toggle="hide" class="backdrop" aria-label="Close offcanvas."></div>
         <div class="offcanvas-content">
             <a href="#" tabindex="-1">Offcanvas Menu 1</a>
             <a href="#" tabindex="-1">Offcanvas Menu 2</a>
             <a href="#" tabindex="-1">Offcanvas Menu 3</a>
             <div style="height: 2rem;"></div>
-            <button type="button" aria-controls="staticOffcanvasExample" data-toggle="hide">Close</button>
+            <button type="button" aria-controls="staticOffcanvasExample" data-toggle="hide" aria-label="Close offcanvas.">Close</button>
         </div>
     </div>
     <div style="height: 4rem;"></div>
