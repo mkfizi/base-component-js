@@ -356,7 +356,7 @@ class Modal extends Component {
         this.isFocustrap = true;
 
         // If modal mode is scrollable.
-        if (this.element.hasAttribute("data-scrollable")) this.scrollable = this.element.dataset.scrollable;
+        if (this.element.hasAttribute("data-scrollable")) this.scrollable = (this.element.dataset.scrollable === 'true');
 
         // Set default state.
         this.element.getAttribute("aria-hidden") === "false"
@@ -466,7 +466,7 @@ class Offcanvas extends Component {
         this.isFocustrap = true;
 
         // If offcanvas mode is scrollable.
-        if (this.element.hasAttribute("data-scrollable")) this.scrollable = this.element.dataset.scrollable;
+        if (this.element.hasAttribute("data-scrollable")) this.scrollable = (this.element.dataset.scrollable === 'true');
 
         // Set default component attributes.
         this.element.getAttribute("aria-hidden") === "false"
