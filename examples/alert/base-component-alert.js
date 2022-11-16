@@ -101,12 +101,17 @@ class Alert extends Component {
         this.element.remove();
 
         // ------------------------- Put custom hide() codes below -------------------------
+        // Create reset button.
         let element = document.createElement("button");
         element.setAttribute("type", "button");
         element.innerHTML = "Reset";
+
+        // Add "click" event on reset button which will trigger page reload.
         element.addEventListener("click", () => {
             location.reload();
         })
+
+        // Append reset button on document body.
         document.body.appendChild(element);
     }
 }
