@@ -630,18 +630,26 @@ const disableBodyScroll = () => {
  * Enable focus trap.
  */
 const enableFocusTrap = () => {
+    if (currentFocusTrapElement == null) return;
+    
     window.addEventListener("keydown", handleFocusTrap);
     
     // Set focus "currentFocusTrapElement" to force focus.
     setTimeout(() => { 
+        // Check "currentFocusTrapElement" to prevent unexpected behaviour.
+        if (currentFocusTrapElement == null ) return;
+
         currentFocusTrapElement.setAttribute("tabindex", 0);
         currentFocusTrapElement.focus();
-    }, 50);
+    }, 10);
 
     setTimeout(() => { 
+        // Check "currentFocusTrapElement" to prevent unexpected behaviour.
+        if (currentFocusTrapElement == null ) return;
+
         currentFocusTrapElement.removeAttribute("tabindex"); 
         currentFocusTrapElement.blur();
-    }, 150);
+    }, 25);
 
     // ------------------------- Put custom enableFocusTrap() codes below -------------------------
 

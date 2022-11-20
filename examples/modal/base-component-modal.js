@@ -134,7 +134,7 @@ class Modal extends Component {
 
         // Display modal content and uses "timeout()" for smoother animations.
         let content = this.element.querySelector(".modal-content");
-        if (content != null) setTimeout(() => content.classList.add('active'), 50);
+        if (content != null) setTimeout(() => content.classList.add('active'), 10);
     }
 
     /**
@@ -150,7 +150,7 @@ class Modal extends Component {
         if (content != null) content.classList.remove('active');
         
         // Hide modal content and uses "timeout()" for smoother animations.
-        setTimeout(() => this.element.classList.remove('active'), 150);
+        setTimeout(() => this.element.classList.remove('active'), 25);
     }
 
     /**
@@ -257,18 +257,26 @@ const disableBodyScroll = () => {
  * Enable focus trap.
  */
 const enableFocusTrap = () => {
+    if (currentFocusTrapElement == null) return;
+
     window.addEventListener("keydown", handleFocusTrap);
     
     // Set focus "currentFocusTrapElement" to force focus.
     setTimeout(() => { 
+        // Check "currentFocusTrapElement" to prevent unexpected behaviour.
+        if (currentFocusTrapElement == null ) return;
+
         currentFocusTrapElement.setAttribute("tabindex", 0);
         currentFocusTrapElement.focus();
-    }, 50);
+    }, 10);
 
     setTimeout(() => { 
+        // Check "currentFocusTrapElement" to prevent unexpected behaviour.
+        if (currentFocusTrapElement == null ) return;
+
         currentFocusTrapElement.removeAttribute("tabindex"); 
         currentFocusTrapElement.blur();
-    }, 150);
+    }, 25);
 
     // ------------------------- Put custom enableFocusTrap() codes below -------------------------
 
