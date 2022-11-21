@@ -307,7 +307,7 @@ const hideOtherActiveFocusTraps = id => {
     for (let componentInstance of componentInstances) {
 
         // Hide component if component is active.
-        if (componentInstance.isActive && componentInstance.id != id) componentInstance.hide();
+        if (componentInstance.isActive && componentInstance.id != id && componentInstance.isFocustrap) componentInstance.hide();
     }
 
     // ------------------------- Put custom hideOtherActiveFocusTraps() codes below -------------------------
