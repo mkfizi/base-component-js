@@ -249,7 +249,7 @@ const validateComponents = (id, type) => {
 /**
  * Initialize components.
  */
-const initializeComponents = () => {
+const initializeComponent = () => {
     let components = document.querySelectorAll("[data-component]");
 
     for (let i = 0; i < components.length; i++) {
@@ -281,5 +281,5 @@ const initializeComponents = () => {
 
 // Execute when document DOM is loaded to make sure site contents are rendered.
 document.addEventListener("DOMContentLoaded", function() {
-    initializeComponents();
+    initializeComponent();
 });
