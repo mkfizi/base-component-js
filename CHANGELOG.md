@@ -16,6 +16,18 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
+## [0.2.0]
+
+### Added
+* Webpack with Babel dependancies.
+
+### Changed
+* Encapsulate components and utilities objects into their respective files.
+* .gitignore list.
+
+### Removed
+* Move usage examples as its own repository.
+
 ## [0.1.1] - 2022-11-15
 ### Added
 * Tabbable selectors.
