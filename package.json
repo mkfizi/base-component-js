@@ -7,12 +7,13 @@
     "author": "Khafizi Noh",
     "license": "MIT",
     "scripts": {
-        "build": "webpack --no-optimization-minimize",
-        "build-dev": "webpack --mode development --no-optimization-minimize",
-        "build-prod": "webpack --mode production",
-        "watch": "webpack watch --no-optimization-minimize",
-        "watch-dev": "webpack watch --mode development --no-optimization-minimize",
-        "watch-prod": "webpack watch --mode production"
+        "install": "cd ./base-component-js && npm i && cd ../example &&npm i && cd ..",
+        "build": "cd ./base-component-js && npm run build && cd ../example && npm run build && cd ..",
+        "build:dev": "cd ./base-component-js && npm run build:dev && cd ../example && npm run build:dev && cd ..",
+        "build:prod": "cd ./base-component-js && npm run build:prod && cd ../example && npm run build:prod && cd ..",
+        "watch": "cd ./base-component-js && npm run watch && cd ../example && npm run watch && cd ..",
+        "watch:dev": "cd ./base-component-js && npm run watch:dev && cd ../example && npm run watch:dev && cd ..",
+        "watch:dev": "cd ./base-component-js && npm run watch:build && cd ../example && npm run watch:build && cd .."
     },
     "dependencies": {},
     "devDependencies": {
@@ -20,6 +21,8 @@
         "webpack-cli": "^5.0.1",
         "babel-loader": "^9.1.0",
         "@babel/core": "^7.20.5",
-        "@babel/preset-env": "^7.20.2"
+        "@babel/preset-env": "^7.20.2",
+        "css-loader": "^6.7.3",
+        "mini-css-extract-plugin": "^2.7.2"
     }
 }
