@@ -16,17 +16,17 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
-## [0.2.0]
+## [0.2.0] - 2022-12-20
 
 ### Added
-* Webpack with Babel dependancies.
+* Webpack bundler complete with Babel dependancies.
+* Encapsulate components and utilities object into their respective files.
+* Rewrite example codes using new base component scripts.
+* Global run script.
 
 ### Changed
-* Encapsulate components and utilities objects into their respective files.
 * .gitignore list.
-
-### Removed
-* Move usage examples as its own repository.
+* Change run build scripts from using `-` to `:`.
 
 ## [0.1.1] - 2022-11-15
 ### Added
