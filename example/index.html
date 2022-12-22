@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Component Js | Alert Example</title>
+
+    <link rel="stylesheet" href="./dist/style.css">
+    <script src="./dist/script.js"></script>
+</head>
+<body>
+    <h1>Base Component Js</h1>
+
+    <!-- Alert Example -->
+    <h2>Alert Example</h2>
+    <div>
+        <div id="alertExample" data-bc="alert" class="alert-wrapper">
+            <p>Click on 'close' button to trigger hide Alert container.</p>
+            <button type="button" aria-controls="alertExample" data-bc-toggle="hide" aria-label="Close alert.">Close</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Collapse Example -->
+    <h2>Collapse Example</h2>
+    <h3>Regular</h3>
+    <p>Click on 'Toggle' button to toggle collapse.</p>
+    <button type="button" aria-controls="collapseExample" aria-expanded="false" aria-label="Toggle collapse.">Toggle</button>
+    <div id="collapseExample" data-bc="collapse" aria-hidden="true" tabindex="-1" class="collapse-wrapper">
+        <div class="collapse-content">
+            <p>This is an collapse content text example.</p>
+        </div>
+    </div>
+
+    <h3>Accordion</h3>
+    <p>Click on 'Toggle' button to toggle collapse accordion.</p>
+    <button type="button" aria-controls="collapseExample1" aria-expanded="true" aria-label="Toggle collapse 1.">Toggle 1</button>
+    <div id="collapseExample1" data-bc="collapse" data-bc-accordion="accordionId" aria-hidden="false" tabindex="-1" class="collapse-wrapper active">
+        <div class="collapse-content">
+            <p>This is an collapse content text example 1.</p>
+        </div>
+    </div>
+    <button type="button" aria-controls="collapseExample2" aria-expanded="false" aria-label="Toggle collapse 2.">Toggle 2</button>
+    <div id="collapseExample2" data-bc="collapse" data-bc-accordion="accordionId" aria-hidden="true" tabindex="-1" class="collapse-wrapper">
+        <div class="collapse-content">
+            <p>This is an collapse content text example 2.</p>
+        </div>
+    </div>
+    <button type="button" aria-controls="collapseExample3" aria-expanded="false" aria-label="Toggle collapse 3.">Toggle 3</button>
+    <div id="collapseExample3" data-bc="collapse" data-bc-accordion="accordionId" aria-hidden="true" tabindex="-1" class="collapse-wrapper">
+        <div class="collapse-content">
+            <p>This is an collapse content text example 3.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Dropdown example -->
+    <h2>Dropdown Example</h2>
+    <p>Click on 'Toggle' button to toggle dropdown.</p>
+    <button type="button" aria-controls="dropdownExample">Toggle</button>
+    <div id="dropdownExample" data-bc="dropdown" aria-hidden="true" tabindex="-1" class="dropdown-wrapper" aria-label="Toggle dropdown.">
+        <a href="#" tabindex="-1">Dropdown Menu 1</a>
+        <a href="#" tabindex="-1">Dropdown Menu 2</a>
+        <a href="#" tabindex="-1">Dropdown Menu 3</a>
+    </div>
+    </div>
+
+    <hr>
+
+    <!-- Modal example -->
+    <h2>Modal Example</h2>
+    <h3>Regular</h3>
+    <p>Click on 'Show' button to show modal.</p>
+    <button type="button" aria-controls="modalExample" data-bc-toggle="show" aria-label="Open modal.">Show</button>
+    <div id="modalExample" data-bc="modal" aria-hidden="true" tabindex="-1" class="modal-wrapper">
+        <div aria-controls="modalExample" data-bc-toggle="hide" class="backdrop" aria-label="Close modal."></div>
+        <div class="modal-content">
+            <p><strong>Modal Title</strong></p>
+            <p>This is an modal content text example.</p>
+            <button type="button" aria-controls="modalExample" data-bc-toggle="hide" aria-label="Close modal.">Close</button>
+            <button type="button" aria-controls="staticModalExample" data-bc-toggle="show" aria-label="Open modal.">Show</button>
+        </div>
+    </div>
+
+    <h3>Static</h3>
+    <p>Click on 'Show' button to show static (unscrollable body) modal.</p>
+    <button type="button" aria-controls="staticModalExample" data-bc-toggle="show" aria-label="Open modal.">Show</button>
+    <div id="staticModalExample" data-bc="modal" data-bc-scrollable="false" aria-hidden="true" tabindex="-1" class="modal-wrapper">
+        <div aria-controls="staticModalExample" data-bc-toggle="hide" class="backdrop" aria-label="Close modal."></div>
+        <div class="modal-content">
+            <p><strong>Modal Title</strong></p>
+            <p>This is an modal content text example.</p>
+            <button type="button" aria-controls="staticModalExample" data-bc-toggle="hide" aria-label="Close modal.">Close</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Offcanvas example -->
+    <h2>Offcanvas Example</h2>
+    <h3>Regular</h3>
+    <p>Click on 'Show' button to show offcanvas.</p>
+    <button type="button" aria-controls="offcanvasExample" data-bc-toggle="show" aria-label="Open offcanvas.">Show</button>
+    <div id="offcanvasExample" data-bc="offcanvas" aria-hidden="true" tabindex="-1" class="offcanvas-wrapper">
+        <div aria-controls="offcanvasExample" data-bc-toggle="hide" class="backdrop" aria-label="Close offcanvas."></div>
+        <div class="offcanvas-content">
+            <a href="#" tabindex="-1">Offcanvas Menu 1</a>
+            <a href="#" tabindex="-1">Offcanvas Menu 2</a>
+            <a href="#" tabindex="-1">Offcanvas Menu 3</a>
+            <div style="height: 2rem;"></div>
+            <button type="button" aria-controls="offcanvasExample" data-bc-toggle="hide" aria-label="Close offcanvas.">Close</button>
+        </div>
+    </div>
+
+    <h3>Static</h3>
+    <p>Click on 'Show' button to show static (unscrollable body) offcanvas.</p>
+    <button type="button" aria-controls="staticOffcanvasExample" data-bc-toggle="show" aria-label="Open offcanvas.">Show</button>
+    <div id="staticOffcanvasExample" data-bc="offcanvas" data-bc-scrollable="false" aria-hidden="true" tabindex="-1" class="offcanvas-wrapper">
+        <div aria-controls="staticOffcanvasExample" data-bc-toggle="hide" class="backdrop" aria-label="Close offcanvas."></div>
+        <div class="offcanvas-content">
+            <a href="#" tabindex="-1">Offcanvas Menu 1</a>
+            <a href="#" tabindex="-1">Offcanvas Menu 2</a>
+            <a href="#" tabindex="-1">Offcanvas Menu 3</a>
+            <div style="height: 2rem;"></div>
+            <button type="button" aria-controls="staticOffcanvasExample" data-bc-toggle="hide" aria-label="Close offcanvas.">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p><small>Base Component Js Example by <a href="https://mkfizi.dev" target="_blank">mkfizi</a> © <span id="footerCurrentYear"></span></small></p>
+        <!-- 
+            Handle footer current year.
+
+            These codes below are called here instead of being inside script.js to 
+            avoid FOUC should script.js type is defined as a module. 
+        -------------------------------------------------------------------------->
+        <script>
+            const element = document.getElementById("footerCurrentYear");
+            element.innerHTML = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+</html>

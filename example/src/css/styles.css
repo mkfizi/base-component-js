@@ -1,0 +1,162 @@
+body {
+	color: #333;
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 14px;
+	line-height: 1.25rem;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	max-width: 48rem;
+	margin: 4rem auto 0;
+	padding: 1rem 1rem 0;
+}
+
+code {
+	background: #eee;
+	font-size: 90%;
+	padding: 0 2px;
+}
+
+hr{
+	margin: 4rem 0 1rem;
+}
+
+h1 {
+	margin-bottom: 2rem;
+}
+
+.alert-wrapper {
+	border: 1px solid #ccc;
+	padding: 1em 2em;
+	margin-bottom: 1rem;
+}
+
+.collapse-wrapper {
+	border: 1px solid #ccc;
+	padding: 1em 2em;
+	margin-bottom: 1rem;
+	overflow-y: hidden;
+	transition: 150ms ease-in-out;
+	height: 0;
+	opacity: 0;
+}
+
+.collapse-wrapper.active {
+	height: 3rem;
+	opacity: 100%;
+}
+
+.dropdown-wrapper {
+    border: 1px solid #ccc;
+    max-width: 8rem;
+    padding: 1em 2em;
+    margin-bottom: 1rem;
+    overflow-y: hidden;
+    transition: transform 150ms ease-in-out;
+    transform-origin: top left;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.dropdown-wrapper.active {
+    transform: scale(1);
+    opacity: 100%;
+}
+
+
+
+.dropdown-wrapper a {
+    display: block;
+} 
+
+.modal-wrapper {
+    position: fixed;
+    border: 1px solid #ccc;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: none;
+}
+
+.modal-wrapper.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 50%;
+}
+
+.modal-wrapper .modal-content {
+    background-color: white;
+    text-align: center;
+    position: relative;
+    z-index: 50;
+    width: 24em;
+    padding: 1rem;
+    margin: 0 1rem;
+    transition: transform 150ms ease-in-out;
+    transform: scale(0);
+}
+
+.modal-wrapper.active .modal-content.active {
+    transform: scale(1);
+}
+
+
+.offcanvas-wrapper {
+    position: fixed;
+    border: 1px solid #ccc;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: none;
+}
+
+.offcanvas-wrapper.active {
+    display: block;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 50%;
+}
+
+.offcanvas-wrapper .offcanvas-content {
+    background-color: white;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 12em;
+    height: 100vh;
+    padding: 1rem;
+    transition: transform 150ms ease-in-out;
+    transform: translate(-100vh);
+}
+
+.offcanvas-wrapper.active .offcanvas-content.active {
+    transform: translate(0);
+}
+
+footer p{
+    text-align: center;
+    margin: 8rem 0 0;
+}
