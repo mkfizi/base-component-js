@@ -1,8 +1,8 @@
-# Base Component JS
+# Base Component Js
 
 This is a customizable component boilerplates made in vanilla Javascript.
 
-[View Demo](https://mkfizi.github.io/base-component-website)
+[View Demo](https://mkfizi.github.io/base-component)
 
 ## Installation
 
@@ -19,9 +19,9 @@ This library serves as a starting point for creating custom interactive
 components. It does not come with a set of complete pre-built components and
 requires custom activity implementations instead.
 
-Simply put, this library only provides the groundwork on initializing and
-handling components activities. You will need to write your own codes for
-component's activities when the control event is triggered.
+Simply put, this library is a scaffolding and only provides the groundwork on
+initializing and handling components activities. You will need to write your
+own codes for component's activities when the control event is triggered.
 
 [Read Documentation](https://mkfizi.github.io/base-component-website/docs)
 
