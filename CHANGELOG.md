@@ -21,6 +21,9 @@ Put unreleased changes here.
 ### Added
 * Webpack zip plugin.
 
+### Removed
+* License from `./example` subdirectory.
+
 ## [0.2.0] - 2022-12-20
 
 ### Added
