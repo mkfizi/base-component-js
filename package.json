@@ -13,7 +13,7 @@
         "build:prod": "cd ./base-component-js && npm run build:prod && cd ../example && npm run build:prod && cd ..",
         "watch": "cd ./base-component-js && npm run watch && cd ../example && npm run watch && cd ..",
         "watch:dev": "cd ./base-component-js && npm run watch:dev && cd ../example && npm run watch:dev && cd ..",
-        "watch:dev": "cd ./base-component-js && npm run watch:build && cd ../example && npm run watch:build && cd .."
+        "watch:prod": "cd ./base-component-js && npm run watch:prod && cd ../example && npm run watch:prod && cd .."
     },
     "dependencies": {},
     "devDependencies": {
