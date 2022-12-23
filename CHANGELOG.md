@@ -16,6 +16,11 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
+## [0.2.1] - 2022-12-23
+
+### Added
+* Webpack zip plugin.
+
 ## [0.2.0] - 2022-12-20
 
 ### Added
