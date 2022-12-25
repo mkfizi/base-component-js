@@ -7,22 +7,16 @@
     "author": "Khafizi Noh",
     "license": "MIT",
     "scripts": {
-        "install": "cd ./base-component-js && npm i && cd ../example &&npm i && cd ..",
-        "build": "cd ./base-component-js && npm run build && cd ../example && npm run build && cd ..",
-        "build:dev": "cd ./base-component-js && npm run build:dev && cd ../example && npm run build:dev && cd ..",
-        "build:prod": "cd ./base-component-js && npm run build:prod && cd ../example && npm run build:prod && cd ..",
-        "watch": "cd ./base-component-js && npm run watch && cd ../example && npm run watch && cd ..",
-        "watch:dev": "cd ./base-component-js && npm run watch:dev && cd ../example && npm run watch:dev && cd ..",
-        "watch:prod": "cd ./base-component-js && npm run watch:prod && cd ../example && npm run watch:prod && cd .."
+        "install": "npm i && cd ./main && npm i && cd ../example &&npm i && cd ..",
+        "build": "cd ./main && npm run build && cd ../example && npm run build && cd ../website && jekyll build && cd .. && node ./src/index.js",
+        "build:dev": "cd ./main && npm run build:dev && cd ../example && npm run build:dev && cd .. && cd ../website && jekyll build && cd .. && node ./src/index.js",
+        "build:prod": "cd ./main && npm run build:prod && cd ../example && npm run build:prod && cd .. && cd ../website && jekyll build && cd .. && node ./src/index.js",
+        "watch": "cd ./main && npm run watch && cd ../example && npm run watch && && cd ../website && jekyll serve && cd .. && node ./src/index.js",
+        "watch:dev": "cd ./main && npm run watch:dev && cd ../example && npm run watch:dev && cd ../website && jekyll serve && cd .. && node ./src/index.js",
+        "watch:prod": "cd ./main && npm run watch:prod && cd ../example && npm run watch:prod && cd ../website && jekyll serve && cd .. && node ./src/index.js"
     },
-    "dependencies": {},
-    "devDependencies": {
-        "webpack": "^5.75.0",
-        "webpack-cli": "^5.0.1",
-        "babel-loader": "^9.1.0",
-        "@babel/core": "^7.20.5",
-        "@babel/preset-env": "^7.20.2",
-        "css-loader": "^6.7.3",
-        "mini-css-extract-plugin": "^2.7.2"
+    "dependencies": {
+        "archiver": "^5.3.1",
+        "glob": "^8.0.3"
     }
 }
