@@ -14,19 +14,19 @@ Use one of built-in script CLI commands below to compile and build Javascript an
 npm run build
 # Compile without minify.
 
-npm run build-dev
+npm run build:dev
 # Compile for development environment.
 
-npm run build-prod
+npm run build:prod
 # Compile for production environment.
 
 npm run watch
 # Compile without minify and watch for changes.
 
-npm run watch-dev
+npm run watch:dev
 # Compile for development environment and watch for changes.
 
-npm run watch-prod
+npm run watch:prod
 # Compile for production environment and watch for changes.
 ```
 
