@@ -1,10 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-var ZipPlugin = require('zip-webpack-plugin');
 
 const config = {
-    entry: './src/index.js',
+    entry: './index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'script.js',
