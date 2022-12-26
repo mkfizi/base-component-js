@@ -1,9 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
-var ZipPlugin = require('zip-webpack-plugin');
 
 const config = {
-    entry: './src/index.js',
+    entry: './index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'base-component.js',
