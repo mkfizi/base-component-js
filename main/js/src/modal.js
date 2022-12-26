@@ -74,7 +74,6 @@ class Modal extends Component {
         super.hide();
 
         this.isActive = false;
-
         this.toggle();
 
         // -------------------------< Put additional codes here >-------------------------
