@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Base Component JS (v0.2.0): tabs.js
+ * Base Component JS (v0.2.3): tabs.js
  * Licensed under MIT (https://github.com/mkfizi/base-component-js/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */

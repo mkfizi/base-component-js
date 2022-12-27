@@ -1,6 +1,6 @@
 /**
  * --------------------------------------------------------------------------
- * Base Component JS (v0.2.0): offcanvas.js
+ * Base Component JS (v0.2.3): offcanvas.js
  * Licensed under MIT (https://github.com/mkfizi/base-component-js/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */

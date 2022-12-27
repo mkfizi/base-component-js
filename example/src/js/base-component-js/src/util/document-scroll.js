@@ -1,6 +1,6 @@
 /**
 * --------------------------------------------------------------------------
-* Base Component JS (v0.2.0): document-scroll.js
+* Base Component JS (v0.2.3): document-scroll.js
 * Licensed under MIT (https://github.com/mkfizi/base-component-js/blob/main/LICENSE)
 * --------------------------------------------------------------------------
 */
