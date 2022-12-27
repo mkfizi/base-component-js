@@ -16,6 +16,19 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
+## [0.2.2] - 2022-12-23
+
+### Added
+* Implement zip using archiver package.
+
+### Changed
+* Directory for `base-component-js` to `main`.
+* Redefine `main` and `example` structures.
+
+### Removed
+* Webpack config in root folder.
+* Webpack zip plugin.
+
 ## [0.2.1] - 2022-12-23
 
 ### Added
