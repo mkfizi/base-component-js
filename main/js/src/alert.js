@@ -18,8 +18,6 @@ class Alert extends Component {
         super(element);
 
        // -------------------------< Put additional codes here >-------------------------
-       // Element's parent element.
-       this.parentElement = this.element.parentElement;
     }
 
     /**
