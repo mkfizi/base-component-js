@@ -20,7 +20,6 @@ Put unreleased changes here.
 
 ### Added
 * Component usage documentations.
-* Attach `touchstart` event listeners on component "triggers" as some mobile devices could not detect `click` event.
 
 ### Removed
 * `isFocustrap` property from `Modal` and `Offcanvas` classes.

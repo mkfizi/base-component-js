@@ -24,7 +24,6 @@ class Component {
         
         for (let control of this.controls) {
             control.addEventListener("click", this);
-            control.addEventListener("touchstart", this);
         }
 
         // -------------------------< Put additional codes here >-------------------------
