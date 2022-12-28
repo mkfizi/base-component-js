@@ -53,6 +53,8 @@ const baseComponentJs = {
                     instances.modal.push(instances.all[instances.all.length - 1]);
                     break;
 
+                // -------------------------< Register new components here >-------------------------
+
                 default:
                     break;
             }
