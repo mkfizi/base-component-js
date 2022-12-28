@@ -18,7 +18,7 @@ Base Component Js serves as a starting point for creating custom interactive com
 
 Simply put, this library is a scaffolder and only provides the groundwork on initializing and handling components activities. You will need to write your own codes for component's activities when the control event is triggered.
 
-You may [read usage documentation](https://github.com/mkfizi/tailstart/blob/main/main/README.md#Usage) for more informations.
+You may [read usage documentation](https://github.com/mkfizi/base-component-js/blob/main/main/README.md) for more informations.
 
 ## Features
 
