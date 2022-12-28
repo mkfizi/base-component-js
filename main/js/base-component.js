@@ -64,7 +64,7 @@ const baseComponentJs = {
      * @param {string} id 
      * @returns {instance}
      */
-    $: id => {
+    bc: id => {
         for (let instance of instances.all) {
             if (instance.id === id) return instance;
         }
