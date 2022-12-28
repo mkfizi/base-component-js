@@ -9,7 +9,6 @@
 
 import Component from "./component.js";
 
-import instances from "./util/instances.js";
 import documentScroll from "./util/document-scroll";
 import focusTrap from "./util/focus-trap.js";
 import tabs from "./util/tabs.js";
@@ -21,9 +20,6 @@ class Offcanvas extends Component {
      */
     constructor(element) {
         super(element);
-
-        // Element default focus trap mode.
-        this.isFocustrap = true;
 
         // Element default scrollable state.
         this.isScrollable = true;

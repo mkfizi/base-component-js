@@ -21,9 +21,6 @@ class Modal extends Component {
     constructor(element) {
         super(element);
 
-        // Element default focus trap mode.
-        this.isFocustrap = true;
-
         // Element default scrollable state.
         this.isScrollable = true;
 
