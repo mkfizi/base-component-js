@@ -25,6 +25,8 @@ const instances = {
     
     // All offcanvas instances.
     offcanvas: [],
+
+    // -------------------------< Register instance for new components here >-------------------------
 }
 
 export default instances;
