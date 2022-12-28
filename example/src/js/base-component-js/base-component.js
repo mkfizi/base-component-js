@@ -11,7 +11,7 @@ import Alert from "./src/alert.js";
 import Collapse from "./src/collapse.js";
 import Dropdown from "./src/dropdown.js";
 import Modal from "./src/modal.js";
-import Offcanvas from "./src/offcanvas";
+import Offcanvas from "./src/offcanvas.js";
 
 import instances from "./src/util/instances.js";
 import validate from "./src/util/validate.js";
