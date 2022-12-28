@@ -16,7 +16,16 @@ Types of changes:
 ## [Unreleased]
 Put unreleased changes here.
 
-## [0.2.2] - 2022-12-23
+## [0.2.3] - 2022-12-29
+
+### Added
+* Component usage documentations.
+* Attach `touchstart` event listeners on component "triggers" as some mobile devices could not detect `click` event.
+
+### Removed
+* `isFocustrap` property from `Modal` and `Offcanvas` classes.
+
+## [0.2.2] - 2022-12-25
 
 ### Added
 * Implement zip using archiver package.
