@@ -2,51 +2,40 @@
 
 This is a customizable component boilerplates made in vanilla Javascript.
 
-[View Demo](https://mkfizi.github.io/base-component)
+[Download](https://github.com/mkfizi/base-component-js/blob/main/downloads/base-component-js.zip?raw=true)
 
 ## Installation
 
-Insert below script inside `<head>` tag with `src` attribute's value referencing
-to the location of the script.
+Insert below script inside `<head>` tag with `src` attribute's value referencing to the location of the Base Component Js script.
 
 ```html
-<script src="./src/js/base-component.js"></script>
+<script src="./dist/base-component.js"></script>
 ```
 
 ## Usage
 
-This library serves as a starting point for creating custom interactive
-components. It does not come with a set of complete pre-built components and
-requires custom activity implementations instead.
+Base Component Js serves as a starting point for creating custom interactive components. It does not come with a set of complete pre-built components and therefore you will need to write own custom activity implementations instead.
 
-Simply put, this library is a scaffolding and only provides the groundwork on
-initializing and handling components activities. You will need to write your
-own codes for component's activities when the control event is triggered.
+Simply put, this library is a scaffolder and only provides the groundwork on initializing and handling components activities. You will need to write your own codes for component's activities when the control event is triggered.
 
-[Read Documentation](https://mkfizi.github.io/base-component-website/docs)
+You may [read usage documentation](https://github.com/mkfizi/tailstart/blob/main/main/README.md#Usage) for more informations.
 
 ## Features
 
-This library comes with configurations for below components:
-* [Alert](https://mkfizi.github.io/base-component/docs/alert)
-* [Collapse](https://mkfizi.github.io/base-component/docs/collapse)
-* [Dropdown](https://mkfizi.github.io/base-component/docs/dropdown)
-* [Modal](https://mkfizi.github.io/base-component/docs/modal)
-* [Offcanvas](https://mkfizi.github.io/base-component/docs/offcanvas)
-
+This library comes with scaffolder for below components:
+* Alert
+* Collapse
+* Dropdown
+* Modal
+* Offcanvas
 
 ### Accessibility
 
-This library relies heavily on `aria-*` attributes for the component to work as
-intended. Therefore, it already covers web accessibility practices on affected
-component elements.
+This library relies heavily on `aria-*` attributes for the component to work as intended. Therefore, it already covers web accessibility practices on affected component elements.
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to
-discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/mkfizi/base-component-js/blob/main/LICENSE)

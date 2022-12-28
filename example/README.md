@@ -1,45 +1,33 @@
 # Base Component Js Examples
 
-This is usage example for [Base Component Js](https://mkfizi.github.io/base-component-js).
+This is usage example for [Base Component Js](hhttps://github.com/mkfizi/base-component-js).
 
-## Modifying Source Code
+## Modifying source code
 
-To modify and execute source code, use NPM CLI command below to install Base Component JS dependancies.
+To modify and execute source code, run below command below to install Base Component JS dependancies.
 ```bash
 npm install
 ```
 
-Use one of built-in script CLI commands below to compile and build Javascript and CSS files using [Webpack](https://webpack.js.org/).
+Run below command to build and compile asset files.
 ```bash
 npm run build
-# Compile without minify.
-
-npm run build:dev
-# Compile for development environment.
-
-npm run build:prod
-# Compile for production environment.
-
-npm run watch
-# Compile without minify and watch for changes.
-
-npm run watch:dev
-# Compile for development environment and watch for changes.
-
-npm run watch:prod
-# Compile for production environment and watch for changes.
 ```
 
+Alternatively, you may run below commands:
+* `npm run build:dev` ─ Build for development.
+* `npm run build:prod` ─ Build and minify for production.
+* `npm run watch` ─ Build and watch for changes in real time.
+* `npm run watch:dev` ─ Build for development and watch for changes in real time.
+* `npm run watch:prod` ─ Build and minify for production and watch for changes in real time.
+
 If you never heard of NPM before, this is the best time to start using it since
-modern web development work best with NPM. Refer here for more informations:
-[NPM](https://www.npmjs.com/)
+modern web development work best with NPM. Refer [NPM](https://www.npmjs.com/) for more informations.
 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to
 discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
