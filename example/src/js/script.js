@@ -11,7 +11,7 @@ const script = () => {
  * completely rendered.
  */
 document.addEventListener("DOMContentLoaded", () => {
-   script();
+    script();
 });
 
 export default script;
