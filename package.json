@@ -8,12 +8,12 @@
     "license": "MIT",
     "scripts": {
         "install": "npm i && cd ./main && npm i && cd ../example &&npm i && cd ..",
-        "build": "cd ./main && npm run build && cd ../example && npm run build && cd ../website && jekyll build && cd .. && node ./src/index.js",
-        "build:dev": "cd ./main && npm run build:dev && cd ../example && npm run build:dev && cd .. && cd ../website && jekyll build && cd .. && node ./src/index.js",
-        "build:prod": "cd ./main && npm run build:prod && cd ../example && npm run build:prod && cd .. && cd ../website && jekyll build && cd .. && node ./src/index.js",
-        "watch": "cd ./main && npm run watch && cd ../example && npm run watch && cd ../website && jekyll serve && cd .. && node ./src/index.js",
-        "watch:dev": "cd ./main && npm run watch:dev && cd ../example && npm run watch:dev && cd ../website && jekyll serve && cd .. && node ./src/index.js",
-        "watch:prod": "cd ./main && npm run watch:prod && cd ../example && npm run watch:prod && cd ../website && jekyll serve && cd .. && node ./src/index.js"
+        "build": "cd ./main && npm run build && cd ../example && npm run build && cd .. && node ./src/index.js",
+        "build:dev": "cd ./main && npm run build:dev && cd ../example && npm run build:dev && cd .. && node ./src/index.js",
+        "build:prod": "cd ./main && npm run build:prod && cd ../example && npm run build:prod && cd .. && node ./src/index.js",
+        "watch": "cd ./main && npm run watch && cd ../example && npm run watch && cd .. && node ./src/index.js",
+        "watch:dev": "cd ./main && npm run watch:dev && cd ../example && npm run watch:dev && cd .. && node ./src/index.js",
+        "watch:prod": "cd ./main && npm run watch:prod && cd ../example && npm run watch:prod && cd .. && node ./src/index.js"
     },
     "dependencies": {
         "archiver": "^5.3.1",

@@ -2,6 +2,10 @@
 
 This is usage example for [Base Component Js](hhttps://github.com/mkfizi/base-component-js).
 
+* [Modifying source code](#modifying-source-code)
+* [Contributing](#contributing)
+* [License](#license)
+
 ## Modifying source code
 
 To modify and execute source code, run below command below to install Base Component JS dependancies.

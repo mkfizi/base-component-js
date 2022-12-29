@@ -4,6 +4,14 @@ This is a customizable component boilerplates made in vanilla Javascript.
 
 ![Base Component Js 3](https://user-images.githubusercontent.com/29935843/209938912-6797ed22-1a27-41e7-86d3-86b4d8b81a60.gif)
 
+* [Download](#download)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Features](#features)
+* [Accessibility](#accessibility)
+* [Contributing](#contributing)
+* [License](#license)
+
 ## Download
 
 Click [here](https://github.com/mkfizi/base-component-js/blob/main/downloads/base-component-js.zip?raw=true) to download the scaffolder and unzip it's content to your project path to start building your own components using Base Component Js.
