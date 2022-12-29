@@ -4,13 +4,42 @@ This is a customizable component boilerplates made in vanilla Javascript.
 
 [Download](https://github.com/mkfizi/base-component-js/blob/main/downloads/base-component-js.zip?raw=true)
 
+## Download
+
+Click [here](https://github.com/mkfizi/base-component-js/blob/main/downloads/base-component-js.zip?raw=true) to download the scaffolder and unzip it's content to your project path to start building your own components using Base Component Js.
+
 ## Installation
 
-Insert below script inside `<head>` tag with `src` attribute's value referencing to the location of the Base Component Js script.
+Run below command to install dependencies.
+```bash
+npm install
+```
+
+Run below command to build Base Component JS codes.
+```bash
+npm run build
+```
+
+Alternatively, you may run below commands:
+* `npm run build:dev` ─ Build for development.
+* `npm run build:prod` ─ Build and minify for production.
+* `npm run watch` ─ Build and watch for changes in real time.
+* `npm run watch:dev` ─ Build for development and watch for changes in real time.
+* `npm run watch:prod` ─ Build and minify for production and watch for changes in real time.
+
+Insert below script inside `<head>` tag with `src` attribute value referencing
+to the location of the Base Component Js script.
 
 ```html
 <script src="./dist/base-component.js"></script>
 ```
+
+That's it. You may begin to use Base Component Js in your project. 
+
+If you never heard of NPM before, this is the best time to start using it since modern web development work best with NPM. Refer [NPM](https://www.npmjs.com/) for more informations.
+
+> **Note:**
+By default, Base Component Js uses [Webpack v5](https://webpack.js.org/) bundler to build component and utility codes. You may use whatever bundlers according to your preference or project requirements.
 
 ## Usage
 
